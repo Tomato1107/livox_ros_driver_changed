@@ -2,7 +2,7 @@
 
 	<arg name="lvx_file_path" default="livox_test.lvx"/>
 	<arg name="bd_list" default="100000000000000"/>
-	<arg name="xfer_format" default="1"/>
+	<arg name="xfer_format" default="0"/>
 	<arg name="multi_topic" default="0"/>
 	<arg name="data_src" default="0"/>
 	<arg name="publish_freq" default="10.0"/>
@@ -25,7 +25,7 @@
 	<param name="frame_id" type="string" value="$(arg msg_frame_id)"/>
 	<param name="enable_lidar_bag" type="bool" value="$(arg lidar_bag)"/>
 	<param name="enable_imu_bag" type="bool" value="$(arg imu_bag)"/>
-	<node pkg="loam_horizon" type="livox_repub" name="livox_repub" output="screen" />
+
 	<node name="livox_lidar_publisher" pkg="livox_ros_driver"
 	      type="livox_ros_driver_node" required="true"
 	      output="screen" args="$(arg cmdline_arg)"/>
