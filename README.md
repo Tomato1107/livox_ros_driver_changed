@@ -1,9 +1,10 @@
 # Livox ROS Driver([览沃ROS驱动程序中文说明](https://github.com/Livox-SDK/livox_ros_driver/blob/master/README_CN.md))
-This is a modified livox_ros_driver for [R2LIVE](https://github.com/hku-mars/r2live/). In this repo, we have modified the sources files [lddc.cpp](./livox_ros_driver/livox_ros_driver/lddc.cpp) in oder to:
-1. Modified the timestamp of IMU topic and LiDAR topic from LiDAR base to operation system base.
-2. The value of IMU acceleration multiplies the amplitude (9.805 m/(s^2)) of gravity before publish.
+This is a modified livox_ros_driver for [FAST_LIO](https://github.com/hku-mars/FAST_LIO), [R2LIVE](https://github.com/hku-mars/r2live/) and [R3LIVE](https://github.com/hku-mars/r3live/) . In this repo, we have modified the sources files [lddc.cpp](./livox_ros_driver/livox_ros_driver/lddc.cpp) in oder to:
+1. Add the offset_time to the PointCloud2 data format
+2. Modified the timestamp of IMU topic and LiDAR topic from LiDAR base to operation system base.
+3. The value of IMU acceleration multiplies the amplitude (9.805 m/(s^2)) of gravity before publish.
 
-For more detail, please see [lddc.cpp](./livox_ros_driver/livox_ros_driver/lddc.cpp) line 41-46, 562-564, 622-645.
+For more detail, please see [lddc.cpp](./livox_ros_driver/livox_ros_driver/lddc.cpp) 
 
 livox_ros_driver is a new ROS package, specially used to connect LiDAR products produced by Livox. The driver can be run under ubuntu 14.04/16.04/18.04 operating system with ROS environment (indigo, kinetic, melodic) installed. Tested hardware platforms that can run livox_ros_driver include: Intel x86 cpu platforms, and some ARM64 hardware platforms (such as nvida TX2 / Xavier, etc.).
 
